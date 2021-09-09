@@ -1,0 +1,167 @@
+body {
+  text-align: center;
+  background-color: #f2e335;
+}
+
+@media only screen and (max-width: 620px) {
+  .column, .row, .todo-input, .todo-item-area, .filter-area {
+    width: 100%;
+  }
+}
+
+.todo-input {
+  width: 300px;
+  font-size: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+h2 {
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+  
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h3 {
+  color: #black;
+  font-size: 30px;
+}
+.todo-item-area {
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 3px 3px 5px #eee;
+  & li {
+    list-style: none;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    line-height: 2em;
+    padding: 10px;
+    box-sizing: border-box;
+    &.done {
+      text-decoration: line-through;
+    }
+    & input,
+    & label {
+      cursor: pointer;
+    }
+  }
+}
+.filter-area {
+  margin-top: 10px;
+  button {
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .button-active {
+    border-color: #e969009c;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #f2e335;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+.equalizer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  width: 10rem;
+  height: 7rem;
+}
+.bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    0deg,
+    rgba(100,50,255,1) 0%,
+    rgba(253,29,29,1) 65%,
+    rgba(252,176,69,1) 100%
+  );
+}
+.bar > span {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: transform 250ms cubic-bezier(.11,.32,.38,.91);
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.start,
+.stop {
+  border: 2px solid currentcolor;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+}
+.start {
+  color: darkgreen;
+}
+.start:hover {
+  background-color: lightgreen;
+}
+.stop {
+  color: darkred;
+}
+.stop:hover {
+  background-color: lightpink;
+}
