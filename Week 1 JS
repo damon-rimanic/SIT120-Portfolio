@@ -1,0 +1,76 @@
+Vue.component('todo-item', {
+  props: ['todolist', 'currentFilter'],
+  template: `
+    <li v-bind:class="{done: todolist.done}" v-if="showTodoList">
+      <input
+        v-bind:id="'item-' + todolist.id"
+        type="checkbox"
+        v-model="todolist.done">
+      <label v-bind:for="'item-' + todolist.id">{{ todolist.text }}</label>
+    </li>
+  `,
+  computed: {
+    showTodoList: function() {
+      if (this.currentFilter === 'Undo') {
+        return !this.todolist.done;
+      } else if (this.currentFilter === 'Done') {
+        return this.todolist.done;
+      } else {
+        return true;
+      }
+    }
+  }
+})
+
+Vue.component('filter-button', {
+  props: ['filterItem', 'currentFilter'],
+  template: `
+    <button v-bind:class="classObject" v-on:click="$emit('set-filter', filterItem)">
+      {{ filterItem }}
+    </button>`,
+  computed: {
+    classObject: function () {
+      return this.$props.currentFilter == this.$props.filterItem ? 'button-active' : ''
+    }
+  },
+})
+
+var todoApp = new Vue({
+  el: '#todo-app',
+  watch: {
+    currentFilter: (value) => {
+      console.log(value)
+    }
+  },
+  data: {
+    newTodoText: '',
+    newTodoId: 2,
+    todoList: [{
+        id: 0,
+        text: 'learn vue',
+        done: true,
+      },
+      {
+        id: 1,
+        text: 'create something',
+        done: false,
+      },
+    ],
+    currentFilter: 'All',
+    filters: ['All', 'Undo', 'Done'],
+  },
+  methods: {
+    submitTodo: function () {
+      var newTodo = {
+        id: this.newTodoId++,
+        text: this.newTodoText,
+        done: false,
+      }
+      this.todoList.push(newTodo);
+      this.newTodoText = '';
+    },
+    handleSetFilter: function(newFilter) {
+      this.currentFilter = newFilter;
+    }
+  },
+})
