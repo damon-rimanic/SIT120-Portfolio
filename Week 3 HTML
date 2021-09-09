@@ -132,6 +132,20 @@ ctx.stroke();
       <button class="stop">Stop</button>
     </div>
   </div>
-</div>    
+</div>  
+
+<h4>
+  
+  Random Number 
+  
+</h4
+ 
+<p>
+  <button id="clickme">Click Me</button>
+</p>  
+  
+<p id="theNumber"></p>
+<p id="writeHere"></p>
+<p>You have clicked <span id="count">0</span> times.</p> 
   
 </html>
