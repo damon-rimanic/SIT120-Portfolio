@@ -1,0 +1,266 @@
+<!doctype html>
+
+<html>
+
+  <h2>
+    This is a webpage heading
+  </h2> 
+
+  <body>
+    <p>
+      this is a paragraph
+    </p>
+    
+    <head>
+
+<nav>
+<ul>
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">News</a></li>
+  <li><a href="contact.asp">Contact</a></li>
+  <li><a href="about.asp">About</a></li>
+</ul>  
+</nav>
+  <h2>
+    This is a webpage heading
+  </h2> 
+  
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png" width="300" height="300"
+
+  </body>
+ 
+<style>
+* {
+  box-sizing: border-box;
+  
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h3>scary smiley</h3>
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Classic_smiley.svg" width="150" height="150"</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h3>simple smiley</h3>
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/768px-Smiley.svg.png" width="150" height="150"</p>
+  </div>
+</div> 
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+  
+  <h3>To-do's</h3>
+  
+  <div id="todo-app">
+    <input
+      class="todo-input"
+      type="text"
+      placeholder="Type to-do here"
+      v-model="newTodoText"
+      v-on:keyup.enter="submitTodo">
+    <div class="filter-area">
+      <filter-button
+        v-on:set-filter="handleSetFilter"
+        v-for="item in filters"
+        v-bind:filter-item="item"
+        v-bind:current-filter="currentFilter"
+        v-bind:key="item.id">
+      </filter-button>
+    </div>
+    <div class="todo-item-area">
+      <todo-item
+        v-for="item in todoList"
+        v-bind:todolist="item"
+        v-bind:current-filter="currentFilter"
+        v-bind:key="item.id">
+      </todo-item>
+    </div>
+  </div>
+  
+<p>
+
+ <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+  </canvas>  
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+ctx.stroke();
+</script>  
+  
+</p>
+ 
+  <p><iframe width="560" height="315" src="https://www.youtube.com/embed/q2fIWB8o-bs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p> 
+  
+<div class="container">
+  <div class="equalizer">
+    <div class="bar"><span /></div>
+    <div class="bar"><span /></div>
+    <div class="bar"><span /></div>
+    <div class="bar"><span /></div>
+    <div class="bar"><span /></div>
+  </div>
+
+  <div class="controls">
+    <label for="speed">Speed</label>
+    <input id="speed" class="speed" type="range" value="1250" min="0" max="1450" step="50" />
+    <div class="actions">
+      <button class="start">Start</button>
+      <button class="stop">Stop</button>
+    </div>
+  </div>
+</div>  
+
+<h4>
+  
+  Random Number 
+  
+</h4
+ 
+<p>
+  <button id="clickme">Click Me</button>
+</p>  
+  
+<p id="theNumber"></p>
+<p id="writeHere"></p>
+<p>You have clicked <span id="count">0</span> times.</p> 
+
+<div id="app-2">
+      <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+      </span>
+</div>
+
+<div id="app-3">
+      <span v-if="seen">Now you see me</span>
+</div>
+
+    <div id="app-7">
+      <ol>
+    <!--
+      Now we provide each todo-item with the todo object
+      it's representing, so that its content can be dynamic.
+    -->
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+       ></todo-item>
+      </ol>
+    </div>
+    
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+    
+    <input v-model="message" placeholder="edit me">
+      <p>Message is: {{ message }}</p>
+    
+    <section id="login" v-bind:class="isShake">
+ <form>
+  <h2>Login</h2>
+  <div class="info" v-bind:class="good">
+   <p>{{ alert.message }}</p>
+   <p v-show="login.login && login.password">{{ login.login}} / {{ login.password}}</p>
+  </div>
+  <input type="text" v-model="login.login" placeholder="Username" />
+  <input type="password" v-model="login.password" placeholder="Password" />
+   <input type="email" v-model="login.email" placeholder="Email" />
+  <button v-on:click="onSubmit">Log in</button>
+ </form>
+</section>
+
+   <br></br>
+   
+<div id="v-model-multiple-checkboxes" class="demo">
+  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+  <label for="jack">Jack</label>
+  <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+  <label for="john">John</label>
+  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+  <label for="mike">Mike</label>
+  <br />
+  <span>Checked names: []</span>
+</div>
+  
+  <br/><br/>
+  
+   <div id="app">
+  <select v-model="selected">
+    <option disabled value="">Please select one</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <span>Selected: A</span>
+  <br/><br/>
+
+   <div id="app">
+   <section class="hero is-fullheight is-warning is-bold">
+     <div class="hero-body">
+       <div class="container">
+         <p class="title is-1">{{ title }}</p>
+         <p class="subtitle is-3">{{ subtitle }}</p>
+         <!-- Renders "Hello from the parent!" -->
+        <child-component>
+          <p slot="bottom">Let's move this into the bottom slot</p>
+          <p>Hello from the parent!</p>
+          <p slot="top">Let's move this into the top slot</p>
+        </child-component>
+        <!-- Renders "Hello from the child!" -->
+        <child-component></child-component>
+       </div>
+     </div>
+  </section>
+</div>
+
+<script type="text/x-template" id="child-component">
+  <div>
+    <!-- Elements injected with the `slot="top"`
+    attribute will end up in here. -->
+    <slot name="top">
+    </slot>
+    <!-- A slot tag without a name is a catch-all,
+    it will contain any content that doesn't have
+    a `slot=""` attribute. -->
+    <slot>
+      <p>Hello from the child!</p>
+    </slot>
+    <!-- Elements injected with the `slot="bottom"`
+    attribute will end up in here. -->
+    <slot name="bottom">
+    </slot>
+  </div>
+</script>
+  
+</html>
